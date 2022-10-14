@@ -11,3 +11,15 @@
 .box{
     border:solid black 5px;
 }
+
+#questionNext{
+    position: absolute;
+    bottom: 150px;
+    right: 150px;
+    
+    
+}
+
+#nextQuestion{
+    font-size: 50px;
+}
