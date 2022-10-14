@@ -27,14 +27,20 @@ async function getQuestion (){
       })
       .then(res=>{
         console.log (res.quote)
-       let animeTitle = document.querySelector('#anime')
+       let animeTitle = document.querySelector('#anime1')
         animeTitle.innerText = res.anime
         let quoteQuestion = document.querySelector('#saidQuote')
         quoteQuestion.innerText = res.quote
-        let character = document.querySelector('#character')
+        let character = document.querySelector('#character2')
         character.innerText = res.character
       })
 }
 
 button.addEventListener('click', getQuestion)
     
+// Decided that character and anime will be A B C D
+//quote will be the only thing shown on question
+
+
+//need a method to swap around A B C D
+//first see if different calls can be made
