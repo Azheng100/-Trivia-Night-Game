@@ -7,6 +7,8 @@ This will be a trivia game based on anime show facts. It will be a simple game w
 ###H3 How to get started: 
 Take the api from github and import it into my javascript file. Create the boilerplate files. Create a wireframe before creating the grid in html. Once the grid is complete, I will have to work on the javascript and then use css to make the game presentable. 
 
+https://trello.com/b/ktarEhpm/trivia-game-board For Trello Board
+https://wireframe.cc/U3LNiL For Wireframe
 
 ####H4Credit: 
 To be posted
