@@ -44,3 +44,7 @@ button.addEventListener('click', getQuestion)
 
 //need a method to swap around A B C D
 //first see if different calls can be made
+
+
+// actually i realized I can literally just make an array with fake answers
+

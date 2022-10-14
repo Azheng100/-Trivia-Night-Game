@@ -1,24 +1,43 @@
 
 body{
-    max-width: 100%;
-    overflow: hidden;
+    background-color: yellowgreen;
+    
 }
 
 
 
-.grid-container{
+.grid-container1{
     display: inline-grid;
-    grid-template-columns: 400px 400px 400px 400px ;
-    grid-template-rows: 200px 200px 200px ;
-    border: solid black 2px;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: 150px;
     background-color: aqua;
-    column-gap: 50px;
-    row-gap: 50px;
+    
+}
+.grid-container2{
+    display: inline-grid;
+    grid-template-columns: 1200px;
+    grid-template-rows: 200px;
+    border: solid black 2px;
+    background-color: red;
+}
+
+.grid-container3{
+    display: inline-grid;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 250px;
+    border: solid black 2px;
+    background-color: yellow;
+
 }
 
 .box{
     border:solid black 5px;
 }
+
+.box3{
+    border: solid black 2px;
+}
+
 
 #questionNext{
     flex: center;
@@ -30,6 +49,7 @@ body{
 
 #nextQuestion{
     font-size: 50px;
+    float: right;
 }
 
 h1{
@@ -45,15 +65,16 @@ h2{
 }
 
 h3{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
+    text-align: center;
 }
 
 button{
     background-color: orange;
     display: inline-block;
     
-    margin-left: 120px;
-    height: 70px;
-    width: 70px;
+    margin-left: 250px;
+    height: 100px;
+    width: 100px;
 }
