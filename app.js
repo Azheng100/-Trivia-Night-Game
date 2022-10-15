@@ -36,31 +36,64 @@ let placement2 = document.querySelector('#anime2')
 let placement3 = document.querySelector('#anime3') 
 let placement4 = document.querySelector ('#anime4') 
 
+let placementA =document.querySelector('#character1')
+let placementB =document.querySelector('#character2')
+let placementC =document.querySelector('#character3')
+let placementD =document.querySelector('#character4')
+
 let placementLogic = [placement1, placement2, placement3, placement4] //anime
+let placementLogic2 =[placementA,placementB,placementC,placementD]
+
 //character
 
+//let placementLogic = [{array1: placement1, array2: placementA}, {array1: placement2, array2: placementB},{array1: placement3, array2: placementC} , {array: placement4, array2: placementD} ]
+
+
 function placementSelector(){
-    let randomPlacement= Math.floor((Math.random()*4))
-   // if placement = character
-    return placementLogic[randomPlacement]
+    let x = Math.floor((Math.random()*4))
+    let randomPlacement= x
+    
+    return placementLogic[randomPlacement] 
+
 
 } 
 
+
+
+
+//function placementSelector2(){
+  //let x = Math.floor((Math.random()*4))
+  ///let randomPlacement= x
+
+  //return placementLogic2[randomPlacement] 
+
+//}
+
+
+
+
+
 function correctAnswer(res){
-  console.log (res.quote)
+  console.log ('is it working')
  let animeTitle = placementSelector()
-  animeTitle.innerText = res.anime
+ animeTitle.innerText = res.anime
   let quoteQuestion = document.querySelector('#saidQuote')
   quoteQuestion.innerText = res.quote
- let character = placementSelector()
+ if(animeTitle=== placement1){
+  let character = placementA
   character.innerText = res.character
-}  
-
-
-
-
-
-
+ }else if(animeTitle === placement2){
+  character = placementB
+  character.innerText = res.character
+ }else if(animeTitle === placement3){
+  character = placementC
+  character.innerText = res.character
+ }else if(animeTitle === placement4){
+  character = placementD
+  character.innerText = res.character
+ }
+  
+}
 
 
 
@@ -71,7 +104,8 @@ async function getQuestion (){
          return res.json()
       })
       .then(res=>{
-        correctAnswer(res)
+      correctAnswer(res)
+        
       })
       
       //insert dummy answers
