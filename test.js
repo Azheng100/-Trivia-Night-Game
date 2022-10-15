@@ -1,9 +1,17 @@
-let fakeAnswers = [{name2:'Ichicgo Kurosaki', anime2: 'Bleach' }, {name2:'Hamtaro', anime2: 'Hamtaro' },{name2:'Saitama', anime2: 'One Punch man'},{name2:'Shinji Ikari', anime2: 'Neon Genesis Evangelion' } ]
+placement1 = 'a'
+placement2= 'b'
+placement3 = 'c'
+placement4= 'd'
 
 
-for (let i=0; i<fakeAnswers.length; i++){
-    console.log(fakeAnswers[i].name2);
-}
+let placementLogic = [placement1, placement2, placement3, placement4]
+
+function placementSelector(){
+    let randomPlacement= Math.floor((Math.random()*4))
+   
+    //return placementLogic[randomPlacement-1]
+    console.log(placementLogic[randomPlacement])
+} 
 
 
-//literally a sandbox
+placementSelector()

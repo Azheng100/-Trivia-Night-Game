@@ -1,7 +1,7 @@
 const url = "https://animechan.vercel.app/"
 
 //fake answers bank 
-let fakeAnswers = [{name2:'Ichicgo Kurosaki', anime2: 'Bleach'}, {name2:'Hamtaro', anime2: 'Hamtaro'},{name2:'Saitama', anime2: 'One Punch man'},{name2:'Shinji Ikari', anime2: 'Neon Genesis Evangelion'}, {name2:'Edward Elric', anime2: 'Full Metal Alchemist'}, {name2:'Mai valentine', anime2: 'Yugioh Duel Monsters'}, {name2:'Goku', anime2: 'Dragonball Z'}, {name2:'Yamcha', anime2: 'Dragonball'}, {name2:'Paradox Brothers', anime2: 'Yugioh GX'}, {name2:'Yu Narukami', anime2: 'Persona 4: The Animation'}, {name2:'Adachi', anime2: 'Persona 4: The Golden Animation'}, {name2:'Satsuki Kiryuin', anime2: 'Kill la Kill'}, {name2:'Ryuko Matoi', anime2: 'Kill la Kill'}]
+let fakeAnswers = [{name2:'Ichicgo Kurosaki', anime2: 'Bleach'}, {name2:'Hamtaro', anime2: 'Hamtaro'},{name2:'Saitama', anime2: 'One Punch man'},{name2:'Shinji Ikari', anime2: 'Neon Genesis Evangelion'}, {name2:'Edward Elric', anime2: 'Full Metal Alchemist'}, {name2:'Mai valentine', anime2: 'Yugioh Duel Monsters'}, {name2:'Goku', anime2: 'Dragonball Z'}, {name2:'Yamcha', anime2: 'Dragonball'}, {name2:'Paradox Brothers', anime2: 'Yugioh GX'}, {name2:'Yu Narukami', anime2: 'Persona 4: The Animation'}, {name2:'Adachi', anime2: 'Persona 4: The Golden Animation'}, {name2:'Satsuki Kiryuin', anime2: 'Kill la Kill'}, {name2:'Ryuko Matoi', anime2: 'Kill la Kill'}, {name2:'', anime2: 'Kill la Kill'}]
 
 
 //for (let i=0; i<fakeAnswers.length; i++){
@@ -28,7 +28,42 @@ fetch(url)
 
 
 // Question button logic here
+let answer = false 
 let button = document.querySelector('#nextQuestion')
+
+let placement1 = document.querySelector('#anime1') 
+let placement2 = document.querySelector('#anime2') 
+let placement3 = document.querySelector('#anime3') 
+let placement4 = document.querySelector ('#anime4') 
+
+let placementLogic = [placement1, placement2, placement3, placement4] //anime
+//character
+
+function placementSelector(){
+    let randomPlacement= Math.floor((Math.random()*4))
+   // if placement = character
+    return placementLogic[randomPlacement]
+
+} 
+
+function correctAnswer(res){
+  console.log (res.quote)
+ let animeTitle = placementSelector()
+  animeTitle.innerText = res.anime
+  let quoteQuestion = document.querySelector('#saidQuote')
+  quoteQuestion.innerText = res.quote
+ let character = placementSelector()
+  character.innerText = res.character
+}  
+
+
+
+
+
+
+
+
+
 
 async function getQuestion (){
     fetch('https://animechan.vercel.app/api/random')
@@ -36,14 +71,10 @@ async function getQuestion (){
          return res.json()
       })
       .then(res=>{
-        console.log (res.quote)
-       let animeTitle = document.querySelector('#anime1')
-        animeTitle.innerText = res.anime
-        let quoteQuestion = document.querySelector('#saidQuote')
-        quoteQuestion.innerText = res.quote
-        let character = document.querySelector('#character1')
-        character.innerText = res.character
+        correctAnswer(res)
       })
+      
+      //insert dummy answers
 }
 
 button.addEventListener('click', getQuestion)
