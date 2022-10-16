@@ -56,10 +56,18 @@ lifeTotal.innerText = health
 if(health === 0){
   alert ('You lose')
   getQuestion()
+  reset()
+}
+}
+
+function reset(){
   health = 3
   justice.innerText = ''
+  lifeTotal.innerText = health
+  addOne = 0
+  answer.innerText = addOne
 }
-}
+
 
 //functions to check for right/wrong and update number of answers correct
 let justice = document.querySelector('#truth')
@@ -68,11 +76,20 @@ let answer = document.querySelector('#corrects')
 let addOne = 0
 answer.innerText = addOne
 
+function addUp(){
+  addOne += 1
+  answer.innerText = addOne
+  if (addOne === 10){
+    alert('Winner')
+    reset()
+  }
+}
 
 function correct(tile){
   if (tile === true ){
   justice.innerText = 'Correct'
   console.log( 'correct choice')
+  addUp()
   }else{
   justice.innerText = 'Incorrect'
   console.log( 'nope')
@@ -81,9 +98,6 @@ function correct(tile){
 }
 }
 
-function plusOne(){
-addOne += 1
-}
 
 function stringChecker(){
   
@@ -197,7 +211,7 @@ function getAnswer(res){
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
-    tileC = false
+    tileD = false
 
 
   
@@ -208,21 +222,21 @@ function getAnswer(res){
     fakeCharacterA.innerText = getFakeAnime.anime2
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.name2
-    fakeAnswer = true
+    tileA = false
 
     getFakeAnime2 = randomFakeAnswer()
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
-    fakeAnswer = true
+    tileB = false
 
     getFakeAnime3 = randomFakeAnswer()
     fakeCharacterC = document.querySelector('#character3')
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
-    fakeAnswer = true
+    tileC = false
   
 
 
@@ -242,8 +256,10 @@ async function getQuestion (){
       
 }
 
-let go = button.addEventListener('click', getQuestion)
-
+let go = button.addEventListener('click', ()=>{
+  getQuestion()
+  reset()
+})
 let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
  
 
