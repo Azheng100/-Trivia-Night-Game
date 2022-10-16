@@ -8,6 +8,12 @@ let fakeAnswers = [{name2:'Ichicgo Kurosaki', anime2: 'Bleach'}, {name2:'Hamtaro
     //console.log(fakeAnswers[i].name2);
 //}
 
+function randomFakeAnswer(){
+  let y = Math.floor((Math.random()*4))
+    
+    return fakeAnswers[y] 
+}
+
 
 
 
@@ -58,7 +64,9 @@ function placementSelector(){
 
 } 
 
-
+function randomFakeAnswer(){
+  return fakeAnswers[Math.floor((Math.random()*15))]
+}
 
 
 //function placementSelector2(){
@@ -69,8 +77,9 @@ function placementSelector(){
 
 //}
 
-
-
+function randomFakeAnswer(){
+  return fakeAnswers[Math.floor((Math.random()*15))]
+}
 
 
 function correctAnswer(res){
@@ -92,8 +101,101 @@ function correctAnswer(res){
   character = placementD
   character.innerText = res.character
  }
+  if(character === placementA && animeTitle === placement1){
+    getFakeAnime2 = randomFakeAnswer()
+    fakeCharacterB = document.querySelector('#character2')
+    fakeCharacterB.innerText = getFakeAnime2.name2
+    fakeTitleB = document.querySelector('#anime2')
+    fakeTitleB.innerText = getFakeAnime2.anime2
+
+    getFakeAnime3 = randomFakeAnswer()
+    fakeCharacterC = document.querySelector('#character3')
+    fakeCharacterC.innerText = getFakeAnime3.anime2
+    fakeTitleC = document.querySelector('#anime3')
+    fakeTitleC.innerText = getFakeAnime3.name2
+
+    getFakeAnime4 = randomFakeAnswer()
+    fakeCharacterD = document.querySelector('#character4')
+    fakeCharacterD.innerText = getFakeAnime4.anime2
+    fakeTitleD = document.querySelector('#anime4')
+    fakeTitleD.innerText = getFakeAnime4.name2
+
+    
+  }else if(character === placementB && animeTitle === placement2){
+    getFakeAnime = randomFakeAnswer()
+    fakeCharacterA = document.querySelector('#character1')
+    fakeCharacterA.innerText = getFakeAnime.anime2
+    fakeTitleA = document.querySelector('#anime1')
+    fakeTitleA.innerText = getFakeAnime.name2
+
+    getFakeAnime3 = randomFakeAnswer()
+    fakeCharacterC = document.querySelector('#character3')
+    fakeCharacterC.innerText = getFakeAnime3.anime2
+    fakeTitleC = document.querySelector('#anime3')
+    fakeTitleC.innerText = getFakeAnime3.name2
+
+    getFakeAnime4 = randomFakeAnswer()
+    fakeCharacterD = document.querySelector('#character4')
+    fakeCharacterD.innerText = getFakeAnime4.anime2
+    fakeTitleD = document.querySelector('#anime4')
+    fakeTitleD.innerText = getFakeAnime4.name2
+
+    
+  }else if (character === placementC && animeTitle === placement3){
+    getFakeAnime = randomFakeAnswer()
+    fakeCharacterA = document.querySelector('#character1')
+    fakeCharacterA.innerText = getFakeAnime.anime2
+    fakeTitleA = document.querySelector('#anime1')
+    fakeTitleA.innerText = getFakeAnime.name2
+
+    getFakeAnime2 = randomFakeAnswer()
+    fakeCharacterB = document.querySelector('#character2')
+    fakeCharacterB.innerText = getFakeAnime2.name2
+    fakeTitleB = document.querySelector('#anime2')
+    fakeTitleB.innerText = getFakeAnime2.anime2
+
+    getFakeAnime4 = randomFakeAnswer()
+    fakeCharacterD = document.querySelector('#character4')
+    fakeCharacterD.innerText = getFakeAnime4.anime2
+    fakeTitleD = document.querySelector('#anime4')
+    fakeTitleD.innerText = getFakeAnime4.name2
+
   
+
+  }else if(character === placementD && animeTitle === placement4){
+    getFakeAnime = randomFakeAnswer()
+    fakeCharacterA = document.querySelector('#character1')
+    fakeCharacterA.innerText = getFakeAnime.anime2
+    fakeTitleA = document.querySelector('#anime1')
+    fakeTitleA.innerText = getFakeAnime.name2
+
+    getFakeAnime2 = randomFakeAnswer()
+    fakeCharacterB = document.querySelector('#character2')
+    fakeCharacterB.innerText = getFakeAnime2.name2
+    fakeTitleB = document.querySelector('#anime2')
+    fakeTitleB.innerText = getFakeAnime2.anime2
+
+    getFakeAnime3 = randomFakeAnswer()
+    fakeCharacterC = document.querySelector('#character3')
+    fakeCharacterC.innerText = getFakeAnime3.anime2
+    fakeTitleC = document.querySelector('#anime3')
+    fakeTitleC.innerText = getFakeAnime3.name2
+    
+ 
+
+
+  }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -105,7 +207,7 @@ async function getQuestion (){
       })
       .then(res=>{
       correctAnswer(res)
-        
+      
       })
       
       //insert dummy answers
