@@ -47,12 +47,12 @@ function randomFakeAnswer(){
 }
 
 // check for hp
-let health = 3
+let health = 3 
 let lifeTotal = document.querySelector('#lifetotal')
-lifeTotal.innerText = health
+lifeTotal.innerText = health + " Lives"
 function lifeTaker(){
 health -= 1
-lifeTotal.innerText = health
+lifeTotal.innerText = health + " Lives"
 if(health === 0){
   alert ('You lose')
   getQuestion()
@@ -63,22 +63,23 @@ if(health === 0){
 function reset(){
   health = 3
   justice.innerText = ''
-  lifeTotal.innerText = health
+  lifeTotal.innerText = health + " Lives"
   addOne = 0
-  answer.innerText = addOne
+  answer.innerText = addOne + " number of corrects"
+  justice.innerText = "Best of luck!"
 }
 
 
 //functions to check for right/wrong and update number of answers correct
 let justice = document.querySelector('#truth')
-justice.innerText = ' '
+justice.innerText = 'Best of luck!'
 let answer = document.querySelector('#corrects')
 let addOne = 0
-answer.innerText = addOne
+answer.innerText = addOne + " number of corrects"
 
 function addUp(){
   addOne += 1
-  answer.innerText = addOne
+  answer.innerText = addOne + " number of corrects"
   if (addOne === 10){
     alert('Winner')
     reset()
@@ -87,11 +88,11 @@ function addUp(){
 
 function correct(tile){
   if (tile === true ){
-  justice.innerText = 'Correct'
+  justice.innerText = 'Previous choice: Correct'
   console.log( 'correct choice')
   addUp()
   }else{
-  justice.innerText = 'Incorrect'
+  justice.innerText = 'Previous choice: Incorrect'
   console.log( 'nope')
   lifeTaker()
 

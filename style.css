@@ -78,3 +78,12 @@ button{
     height: 100px;
     width: 100px;
 }
+
+
+#lifetotal{
+    color: red
+}
+.box{
+    font-size: 50px;
+    text-align: center;
+}
