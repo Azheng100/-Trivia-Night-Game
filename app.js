@@ -14,12 +14,6 @@ fetch(url)
   });
 
 
-let answer = document.querySelector('#corrects')
-
-
-let justice = document.querySelector('#truth')
-justice.innerText = ' '
-
 let button = document.querySelector('#nextQuestion')
 
 //title of show
@@ -52,10 +46,56 @@ function randomFakeAnswer(){
   return fakeAnswers[Math.floor((Math.random()*15))]
 }
 
+// check for hp
+let health = 3
+let lifeTotal = document.querySelector('#lifetotal')
+lifeTotal.innerText = health
+function lifeTaker(){
+health -= 1
+lifeTotal.innerText = health
+if(health === 0){
+  alert ('You lose')
+  getQuestion()
+  health = 3
+  justice.innerText = ''
+}
+}
 
-function stringChecker(){}
+//functions to check for right/wrong and update number of answers correct
+let justice = document.querySelector('#truth')
+justice.innerText = ' '
+let answer = document.querySelector('#corrects')
+let addOne = 0
+answer.innerText = addOne
 
 
+function correct(tile){
+  if (tile === true ){
+  justice.innerText = 'Correct'
+  console.log( 'correct choice')
+  }else{
+  justice.innerText = 'Incorrect'
+  console.log( 'nope')
+  lifeTaker()
+
+}
+}
+
+function plusOne(){
+addOne += 1
+}
+
+function stringChecker(){
+  
+}
+//check to see if anything repeats
+// what if i do onclick?
+
+
+let tileA = null
+let tileB = null
+let tileC = null
+let tileD = null
 
 
 
@@ -66,25 +106,28 @@ function getAnswer(res){
  animeTitle.innerText = res.anime
   let quoteQuestion = document.querySelector('#saidQuote')
   quoteQuestion.innerText = res.quote
+
+
  if(animeTitle=== placement1){
   character = placementA
   character.innerText = res.character
- 
+  tileA = true
 
  }else if(animeTitle === placement2){
   character = placementB
   character.innerText = res.character
+  tileB= true
   
 
  }else if(animeTitle === placement3){
   character = placementC
   character.innerText = res.character
- 
+  tileC = true
 
  }else if(animeTitle === placement4){
   character = placementD
   character.innerText = res.character
-  
+  tileD = true
  }
   if(character === placementA && animeTitle === placement1){
     getFakeAnime2 = randomFakeAnswer()
@@ -92,6 +135,7 @@ function getAnswer(res){
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
+    tileB = false
 
 
     getFakeAnime3 = randomFakeAnswer()
@@ -99,34 +143,38 @@ function getAnswer(res){
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
+    tileC = false
 
     getFakeAnime4 = randomFakeAnswer()
     fakeCharacterD = document.querySelector('#character4')
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
+    tileD = false
 
-    justice.innerText = 'Wrong'
+    
   }else if(character === placementB && animeTitle === placement2){
     getFakeAnime = randomFakeAnswer()
     fakeCharacterA = document.querySelector('#character1')
     fakeCharacterA.innerText = getFakeAnime.anime2
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.name2
+    tileA = false
 
     getFakeAnime3 = randomFakeAnswer()
     fakeCharacterC = document.querySelector('#character3')
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
+    tileC = false
 
     getFakeAnime4 = randomFakeAnswer()
     fakeCharacterD = document.querySelector('#character4')
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
+    tileD = false
 
-    justice.innerText = 'Wrong'
 
     
   }else if (character === placementC && animeTitle === placement3){
@@ -135,21 +183,23 @@ function getAnswer(res){
     fakeCharacterA.innerText = getFakeAnime.anime2
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.name2
+    tileA = false
 
     getFakeAnime2 = randomFakeAnswer()
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
+    tileB= false
 
     getFakeAnime4 = randomFakeAnswer()
     fakeCharacterD = document.querySelector('#character4')
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
+    tileC = false
 
 
-    justice.innerText = 'Wrong'
   
 
   }else if(character === placementD && animeTitle === placement4){
@@ -158,20 +208,22 @@ function getAnswer(res){
     fakeCharacterA.innerText = getFakeAnime.anime2
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.name2
+    fakeAnswer = true
 
     getFakeAnime2 = randomFakeAnswer()
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
+    fakeAnswer = true
 
     getFakeAnime3 = randomFakeAnswer()
     fakeCharacterC = document.querySelector('#character3')
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
-    
-    justice.innerText = 'Wrong'
+    fakeAnswer = true
+  
 
 
   }
@@ -193,27 +245,35 @@ async function getQuestion (){
 let go = button.addEventListener('click', getQuestion)
 
 let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
-  console.log ('A')
+ 
+
+    correct(tileA)
     getQuestion()
+
+    
   })
   
   
   let buttonB = document.querySelector('#buttonB').addEventListener('click', ()=>{
-    console.log ('B')
+    correct(tileB)
     getQuestion()
   })
   
   let buttonC = document.querySelector('#buttonC').addEventListener('click', ()=>{
-      console.log ('C')
+      
+      correct(tileC)
       getQuestion()
     })
   
   let buttonD = document.querySelector('#buttonD').addEventListener('click', ()=>{
-      console.log ('D')
+      
+      correct(tileD)
       getQuestion()
   })
   
     
+// I see why we have problems. The buttons A B C D just runs the get question function but it always reset the function. Need a string checker function idea
+
 
 
 
