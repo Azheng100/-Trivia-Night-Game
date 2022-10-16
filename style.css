@@ -1,6 +1,8 @@
 
 body{
-    background-color: yellowgreen;
+    background-image: url(https://i.redd.it/oa3x8t30xos71.jpg);
+    background-position: center;
+
     
 }
 
@@ -16,9 +18,14 @@ body{
 .grid-container2{
     display: inline-grid;
     grid-template-columns: 1200px;
-    grid-template-rows: 200px;
+    grid-template-rows: 500px;
     border: solid black 2px;
-    background-color: red;
+    background-image: url(https://preview.redd.it/apv6yz4792m91.jpg?width=1375&format=pjpg&auto=webp&s=894d331b31dd87dd5e2956f416aad157b6b9918b);
+    background-position: center;
+    color: white;
+    background-size: 1200px 600px
+    
+    
 }
 
 .grid-container3{
@@ -36,6 +43,7 @@ body{
 
 .box3{
     border: solid black 2px;
+    
 }
 
 
