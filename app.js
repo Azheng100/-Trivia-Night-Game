@@ -76,7 +76,7 @@ function placementSelector(){
 
 } 
 
-//used to generate a fake answer
+//used to generate a fake answer 
 function randomFakeAnswer(arr){
   return arr[Math.floor((Math.random()*arr.length))]
 }
@@ -129,20 +129,26 @@ function correct(tile){
 }
 
 
+
 //This function populates right and wrong answer as well as includes lifetaker and addup. Reset is nested in for win condition or lose condition. Correct(tile) function is also nested in to shuffle around the answer tile and wrong anwer tile when a button is clicked. 
 
 function getAnswer(res){
-  let character = null
- let animeTitle = placementSelector()
- animeTitle.innerText = res.anime
-  let quoteQuestion = document.querySelector('#saidQuote')
-  quoteQuestion.innerText = res.quote
+let character = null
+let animeTitle = placementSelector()
+animeTitle.innerText = res.anime
+let quoteQuestion = document.querySelector('#saidQuote')
+quoteQuestion.innerText = res.quote
 let answerBank = fakeAnswers
-let indexFinder = answerBank.findIndex(object=>{
-  return object.name2 === res.character
-})
+  //to cut out any duplicate strings
+function removerDoer(character){
+  let indexFinder = answerBank.findIndex(object=>{
+    return object.name2 === character.name2  
+  })
+  answerBank.splice(indexFinder,1)
 
-answerBank.splice(indexFinder,1)
+}
+
+
 
  if(animeTitle=== placement1){
   character = placementA
@@ -172,6 +178,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
     tileB = false
+    removerDoer(getFakeAnime2)
 
 
     getFakeAnime3 = randomFakeAnswer(answerBank)
@@ -180,6 +187,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
+    removerDoer(getFakeAnime3)
 
     getFakeAnime4 = randomFakeAnswer(answerBank)
     fakeCharacterD = document.querySelector('#character4')
@@ -187,7 +195,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
     tileD = false
-
+    removerDoer(getFakeAnime4)
     
   }else if(character === placementB && animeTitle === placement2){
     getFakeAnime = randomFakeAnswer(answerBank)
@@ -196,6 +204,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.anime2
     tileA = false
+    removerDoer(getFakeAnime)
 
     getFakeAnime3 = randomFakeAnswer(answerBank)
     fakeCharacterC = document.querySelector('#character3')
@@ -203,6 +212,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
+    removerDoer(getFakeAnime3)
 
     getFakeAnime4 = randomFakeAnswer(answerBank)
     fakeCharacterD = document.querySelector('#character4')
@@ -210,6 +220,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
     tileD = false
+    removerDoer(getFakeAnime4)
 
 
     
@@ -220,6 +231,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.anime2
     tileA = false
+    removerDoer(getFakeAnime)
 
     getFakeAnime2 = randomFakeAnswer(answerBank)
     fakeCharacterB = document.querySelector('#character2')
@@ -227,6 +239,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
     tileB= false
+    removerDoer(getFakeAnime2)
 
     getFakeAnime4 = randomFakeAnswer(answerBank)
     fakeCharacterD = document.querySelector('#character4')
@@ -234,6 +247,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
     tileD = false
+    removerDoer(getFakeAnime4)
 
 
   
@@ -245,6 +259,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.anime2
     tileA = false
+    removerDoer(getFakeAnime)
 
     getFakeAnime2 = randomFakeAnswer(answerBank)
     fakeCharacterB = document.querySelector('#character2')
@@ -252,6 +267,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
     tileB = false
+    removerDoer(getFakeAnime2)
 
     getFakeAnime3 = randomFakeAnswer(answerBank)
     fakeCharacterC = document.querySelector('#character3')
@@ -259,6 +275,7 @@ answerBank.splice(indexFinder,1)
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
+    removerDoer(getFakeAnime3)
   
 
 
