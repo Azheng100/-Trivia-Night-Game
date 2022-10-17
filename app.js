@@ -77,8 +77,8 @@ function placementSelector(){
 } 
 
 //used to generate a fake answer
-function randomFakeAnswer(){
-  return fakeAnswers[Math.floor((Math.random()*fakeAnswers.length))]
+function randomFakeAnswer(arr){
+  return arr[Math.floor((Math.random()*arr.length))]
 }
 
 // check for hp
@@ -137,7 +137,12 @@ function getAnswer(res){
  animeTitle.innerText = res.anime
   let quoteQuestion = document.querySelector('#saidQuote')
   quoteQuestion.innerText = res.quote
+let answerBank = fakeAnswers
+let indexFinder = answerBank.findIndex(object=>{
+  return object.name2 === res.character
+})
 
+answerBank.splice(indexFinder,1)
 
  if(animeTitle=== placement1){
   character = placementA
@@ -161,7 +166,7 @@ function getAnswer(res){
   tileD = true
  }
   if(character === placementA && animeTitle === placement1){
-    getFakeAnime2 = randomFakeAnswer()
+    getFakeAnime2 = randomFakeAnswer(answerBank)
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
@@ -169,14 +174,14 @@ function getAnswer(res){
     tileB = false
 
 
-    getFakeAnime3 = randomFakeAnswer()
+    getFakeAnime3 = randomFakeAnswer(answerBank)
     fakeCharacterC = document.querySelector('#character3')
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
 
-    getFakeAnime4 = randomFakeAnswer()
+    getFakeAnime4 = randomFakeAnswer(answerBank)
     fakeCharacterD = document.querySelector('#character4')
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
@@ -185,21 +190,21 @@ function getAnswer(res){
 
     
   }else if(character === placementB && animeTitle === placement2){
-    getFakeAnime = randomFakeAnswer()
+    getFakeAnime = randomFakeAnswer(answerBank)
     fakeCharacterA = document.querySelector('#character1')
     fakeCharacterA.innerText = getFakeAnime.name2
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.anime2
     tileA = false
 
-    getFakeAnime3 = randomFakeAnswer()
+    getFakeAnime3 = randomFakeAnswer(answerBank)
     fakeCharacterC = document.querySelector('#character3')
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
 
-    getFakeAnime4 = randomFakeAnswer()
+    getFakeAnime4 = randomFakeAnswer(answerBank)
     fakeCharacterD = document.querySelector('#character4')
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
@@ -209,21 +214,21 @@ function getAnswer(res){
 
     
   }else if (character === placementC && animeTitle === placement3){
-    getFakeAnime = randomFakeAnswer()
+    getFakeAnime = randomFakeAnswer(answerBank)
     fakeCharacterA = document.querySelector('#character1')
     fakeCharacterA.innerText = getFakeAnime.name2
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.anime2
     tileA = false
 
-    getFakeAnime2 = randomFakeAnswer()
+    getFakeAnime2 = randomFakeAnswer(answerBank)
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
     tileB= false
 
-    getFakeAnime4 = randomFakeAnswer()
+    getFakeAnime4 = randomFakeAnswer(answerBank)
     fakeCharacterD = document.querySelector('#character4')
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
@@ -234,21 +239,21 @@ function getAnswer(res){
   
 
   }else if(character === placementD && animeTitle === placement4){
-    getFakeAnime = randomFakeAnswer()
+    getFakeAnime = randomFakeAnswer(answerBank)
     fakeCharacterA = document.querySelector('#character1')
     fakeCharacterA.innerText = getFakeAnime.name2
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.anime2
     tileA = false
 
-    getFakeAnime2 = randomFakeAnswer()
+    getFakeAnime2 = randomFakeAnswer(answerBank)
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
     tileB = false
 
-    getFakeAnime3 = randomFakeAnswer()
+    getFakeAnime3 = randomFakeAnswer(answerBank)
     fakeCharacterC = document.querySelector('#character3')
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
