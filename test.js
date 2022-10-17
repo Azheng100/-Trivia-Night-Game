@@ -42,3 +42,7 @@ function stringChecker(){
     }
 
 }   
+
+
+//higher order function to filter 
+

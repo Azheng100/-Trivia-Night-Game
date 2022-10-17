@@ -20,7 +20,7 @@ let displayGame = document.querySelector('.grid-container3')
 
 //global variables for updating number of correct and showing when there the previous choice was correct
 let justice = document.querySelector('#truth')
-justice.innerText = 'Best of luck!'
+justice.innerText = '頑張って ください (Please do your best)!'
 let answer = document.querySelector('#corrects')
 let addOne = 0
 answer.innerText = addOne + " number of corrects"
@@ -101,7 +101,7 @@ function reset(){
   lifeTotal.innerText = health + " Lives"
   addOne = 0
   answer.innerText = addOne + " number of corrects"
-  justice.innerText = "Best of luck!"
+  justice.innerText = "頑張る! Give it your best!"
 }
 
 
