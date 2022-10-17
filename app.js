@@ -4,7 +4,7 @@ const url = "https://animechan.vercel.app/"
 let fakeAnswers = [{name2:'Ichicgo Kurosaki', anime2: 'Bleach'}, {name2:'Hamtaro', anime2: 'Hamtaro'},{name2:'Saitama', anime2: 'One Punch man'},{name2:'Shinji Ikari', anime2: 'Neon Genesis Evangelion'}, {name2:'Edward Elric', anime2: 'Full Metal Alchemist'}, {name2:'Mai valentine', anime2: 'Yugioh Duel Monsters'}, {name2:'Goku', anime2: 'Dragonball Z'}, {name2:'Yamcha', anime2: 'Dragonball'}, {name2:'Paradox Brothers', anime2: 'Yugioh GX'}, {name2:'Yu Narukami', anime2: 'Persona 4: The Animation'}, {name2:'Adachi', anime2: 'Persona 4: The Golden Animation'}, {name2:'Satsuki Kiryuin', anime2: 'Kill la Kill'}, {name2:'Ryuko Matoi', anime2: 'Kill la Kill'}, {name2:'Senketsu', anime2: 'Kill la Kill'}, {name2: 'Sasuke', anime2: 'Naruto'}, {name2: 'Denji', anime2: 'Chainsaw Man'}, {name2: 'Makima', anime2: 'Chainsaw Man'} , {name2: 'Power', anime2: 'Chainsaw Man'} , {name2: 'Setsuna F. Seiei', anime2: 'Mobile Suit Gundam 00'} ,{name2: 'Nico Yazawa', anime2: 'Love Live! School Idol Project'}, {name2: 'Ophelia', anime2: 'Claymore'}, {name2: 'Gintoki Sakata', anime2: 'Gintama'}, {name2: 'Sohma Rin', anime2: 'Fruits Basket'}, {name2: 'Iruka Umino', anime2: 'Naruto'}]
 
 
-
+//checks to see if connection works
 fetch(url)
   .then(res => {
     console.log("success!", res);
@@ -28,11 +28,17 @@ let placementB =document.querySelector('#character2')
 let placementC =document.querySelector('#character3')
 let placementD =document.querySelector('#character4')
 
+//correct or wrong answers tiles
+let tileA = null
+let tileB = null
+let tileC = null
+let tileD = null
+
 let placementLogic = [placement1, placement2, placement3, placement4] 
 let placementLogic2 =[placementA,placementB,placementC,placementD]
 
 
-//for right answer
+//to move around correct answer
 function placementSelector(){
     let x = Math.floor((Math.random()*4))
     let randomPlacement= x
@@ -42,8 +48,7 @@ function placementSelector(){
 
 } 
 
-
-//confirm with ta if this works
+//used to generate a fake answer
 function randomFakeAnswer(){
   return fakeAnswers[Math.floor((Math.random()*fakeAnswers.length))]
 }
@@ -62,6 +67,14 @@ if(health === 0){
 }
 }
 
+//variables for updating number of correct and showing when there the previous choice was correct
+let justice = document.querySelector('#truth')
+justice.innerText = 'Best of luck!'
+let answer = document.querySelector('#corrects')
+let addOne = 0
+answer.innerText = addOne + " number of corrects"
+
+//reset function
 function reset(){
   health = 3
   justice.innerText = ''
@@ -72,13 +85,8 @@ function reset(){
 }
 
 
-//functions to check for right/wrong and update number of answers correct
-let justice = document.querySelector('#truth')
-justice.innerText = 'Best of luck!'
-let answer = document.querySelector('#corrects')
-let addOne = 0
-answer.innerText = addOne + " number of corrects"
 
+//the function for adding up when correct answer is clicked
 function addUp(){
   addOne += 1
   answer.innerText = addOne + " number of corrects"
@@ -88,6 +96,7 @@ function addUp(){
   }
 }
 
+//correct answer tile logic
 function correct(tile){
   if (tile === true ){
   justice.innerText = 'Previous choice: Correct'
@@ -102,18 +111,7 @@ function correct(tile){
 }
 
 
-function stringChecker(){
-  
-}
-//check to see if anything repeats
-
-//correct or wrong global variable 
-let tileA = null
-let tileB = null
-let tileC = null
-let tileD = null
-
-
+//This function populates right and wrong answer as well as includes lifetaker and addup. Reset is nested in for win condition or lose condition. Correct(tile) function is also nested in to shuffle around the answer tile and wrong anwer tile when a button is clicked. 
 
 function getAnswer(res){
   let character = null
@@ -258,6 +256,8 @@ async function getQuestion (){
       
 }
 
+
+//Buttons and their logic is listed here
 let go = button.addEventListener('click', ()=>{
   getQuestion()
   reset()
@@ -289,10 +289,10 @@ let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
       getQuestion()
   })
   
-    
+  //To do this:
   // make a function that checks strings so we cannot repeat
   // add more to the fake bank
-  // add some images so it does not look like doodoo
+  // inquire about button a b c d. Can we make them disappear as a trick. 
 
 
 
