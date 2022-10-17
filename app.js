@@ -14,17 +14,23 @@ fetch(url)
     console.log("error", err);
   });
 
-
+//global variables 
 let button = document.querySelector('#nextQuestion')
 let displayGame = document.querySelector('.grid-container3')
-function displayblock3(){
-  if (displayGame.style.display === 'none' || displayGame.style.display === ''){
-    displayGame.style.display = 'inline-grid'
-  }else{
-    displayGame.style.display = 'none'
-  }
-  console.log('im displaying')
-}
+
+//global variables for updating number of correct and showing when there the previous choice was correct
+let justice = document.querySelector('#truth')
+justice.innerText = 'Best of luck!'
+let answer = document.querySelector('#corrects')
+let addOne = 0
+answer.innerText = addOne + " number of corrects"
+
+//global variables for the health count
+let health = 3 
+let lifeTotal = document.querySelector('#lifetotal')
+lifeTotal.innerText = health + " Lives"
+
+//global variables for moving the answer choices around the 4 cell display
 
 //title of show
 let placement1 = document.querySelector('#anime1') 
@@ -44,8 +50,20 @@ let tileB = null
 let tileC = null
 let tileD = null
 
+
+//places choices around the 4 tiles
 let placementLogic = [placement1, placement2, placement3, placement4] 
 let placementLogic2 =[placementA,placementB,placementC,placementD]
+
+
+//hides the choices before the person presses start/reset
+function displayblock3(){
+  if (displayGame.style.display === 'none' || displayGame.style.display === ''){
+    displayGame.style.display = 'inline-grid'
+  }else{
+    displayGame.style.display = 'none'
+  }
+}
 
 
 //to move around correct answer
@@ -64,9 +82,6 @@ function randomFakeAnswer(){
 }
 
 // check for hp
-let health = 3 
-let lifeTotal = document.querySelector('#lifetotal')
-lifeTotal.innerText = health + " Lives"
 function lifeTaker(){
 health -= 1
 lifeTotal.innerText = health + " Lives"
@@ -78,12 +93,6 @@ if(health === 0){
 }
 }
 
-//variables for updating number of correct and showing when there the previous choice was correct
-let justice = document.querySelector('#truth')
-justice.innerText = 'Best of luck!'
-let answer = document.querySelector('#corrects')
-let addOne = 0
-answer.innerText = addOne + " number of corrects"
 
 //reset function
 function reset(){
@@ -251,6 +260,8 @@ function getAnswer(res){
   }
 }
 
+
+//calling the api and generates the prompt as well as 4 choices
 async function getQuestion (){
     fetch('https://animechan.vercel.app/api/random')
       .then(res=>{
@@ -267,11 +278,15 @@ async function getQuestion (){
 
 //Buttons and their logic is listed here
 
+//start or reset button
 let go = button.addEventListener('click', ()=>{
   displayblock3()
   getQuestion()
   reset()
 })
+
+
+// Buttons A B C D
 let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
  
 
@@ -299,12 +314,11 @@ let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
       getQuestion()
   })
   
-  //To do this:
-  // make a function that checks strings so we cannot repeat
-  // add more to the fake bank
-  // inquire about button a b c d. Can we make them disappear as a trick. 
+ 
 
-// use css hide option
 
-// the hide always lag behinds one start up. Is it the api?
+ 
+
+
+
 
