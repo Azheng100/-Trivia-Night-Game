@@ -12,5 +12,12 @@ https://wireframe.cc/U3LNiL For Wireframe
 
 https://animechan.vercel.app/ was the api used
 
+
+
+
+
 ####H4Credit: 
-To be posted
+https://www.w3schools.com/css/css_grid.asp
+https://www.w3schools.com/cssref/pr_background-image.asp
+
+

@@ -106,9 +106,8 @@ function stringChecker(){
   
 }
 //check to see if anything repeats
-// what if i do onclick?
 
-
+//correct or wrong global variable 
 let tileA = null
 let tileB = null
 let tileC = null
