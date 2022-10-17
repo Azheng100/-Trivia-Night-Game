@@ -1,11 +1,9 @@
 # **Anime Trivia-Night-Game**
-
 <picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Azheng100/-Trivia-Night-Game/main/charizard.webp">
- <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Azheng100/-Trivia-Night-Game/main/charizard.webp">
- <img alt="YOUR-ALT-TEXT" src="https://raw.githubusercontent.com/Azheng100/-Trivia-Night-Game/main/charizard.webp">
+ <source media="(prefers-color-scheme: dark)" srcset="">
+ <source media="(prefers-color-scheme: light)" srcset="">
+ <img alt="YOUR-ALT-TEXT" src="">
 </picture>
-
 
 
 ## *Description*: 
