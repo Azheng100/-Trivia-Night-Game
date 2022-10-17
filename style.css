@@ -29,7 +29,7 @@ body{
 }
 
 .grid-container3{
-    display: inline-grid;
+    display: none;
     grid-template-columns: 600px 600px;
     grid-template-rows: 250px;
     border: solid black 2px;
@@ -78,6 +78,9 @@ h3{
     text-align: center;
 }
 
+
+
+
 button{
     background-color: orange;
     display: inline-block;
@@ -85,7 +88,9 @@ button{
     margin-left: 250px;
     height: 100px;
     width: 100px;
+    
 }
+
 
 
 #lifetotal{

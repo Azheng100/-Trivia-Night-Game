@@ -19,5 +19,6 @@ https://animechan.vercel.app/ was the api used
 ####H4Credit: 
 https://www.w3schools.com/css/css_grid.asp
 https://www.w3schools.com/cssref/pr_background-image.asp
+https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 
 

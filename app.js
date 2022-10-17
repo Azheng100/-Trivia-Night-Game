@@ -15,6 +15,15 @@ fetch(url)
 
 
 let button = document.querySelector('#nextQuestion')
+let displayGame = document.querySelector('.grid-container3')
+function displayblock3(){
+  if (displayGame.style.display === 'none' || displayGame.style.display === ''){
+    displayGame.style.display = 'inline-grid'
+  }else{
+    displayGame.style.display = 'none'
+  }
+  console.log('im displaying')
+}
 
 //title of show
 let placement1 = document.querySelector('#anime1') 
@@ -64,6 +73,7 @@ if(health === 0){
   alert ('You lose')
   getQuestion()
   reset()
+  
 }
 }
 
@@ -100,11 +110,9 @@ function addUp(){
 function correct(tile){
   if (tile === true ){
   justice.innerText = 'Previous choice: Correct'
-  console.log( 'correct choice')
   addUp()
   }else{
   justice.innerText = 'Previous choice: Incorrect'
-  console.log( 'nope')
   lifeTaker()
 
 }
@@ -115,7 +123,6 @@ function correct(tile){
 
 function getAnswer(res){
   let character = null
-  console.log ('is it working')
  let animeTitle = placementSelector()
  animeTitle.innerText = res.anime
   let quoteQuestion = document.querySelector('#saidQuote')
@@ -258,7 +265,9 @@ async function getQuestion (){
 
 
 //Buttons and their logic is listed here
+
 let go = button.addEventListener('click', ()=>{
+  displayblock3()
   getQuestion()
   reset()
 })
@@ -294,5 +303,7 @@ let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
   // add more to the fake bank
   // inquire about button a b c d. Can we make them disappear as a trick. 
 
+// use css hide option
 
+// the hide always lag behinds one start up. Is it the api?
 
