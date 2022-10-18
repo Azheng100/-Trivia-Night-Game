@@ -1,7 +1,7 @@
 const url = "https://animechan.vercel.app/"
 
 //fake answers bank 
-fakeAnswers = [{name2:'Ichigo Kurosaki', anime2: 'Bleach'}, {name2:'Hamtaro', anime2: 'Hamtaro'},{name2:'Saitama', anime2: 'One Punch man'},{name2:'Shinji Ikari', anime2: 'Neon Genesis Evangelion'}, {name2:'Edward Elric', anime2: 'Full Metal Alchemist'}, {name2:'Mai valentine', anime2: 'Yugioh Duel Monsters'}, {name2:'Goku', anime2: 'Dragonball Z'}, {name2:'Yamcha', anime2: 'Dragonball'}, {name2:'Paradox Brothers', anime2: 'Yugioh GX'}, ]
+fakeAnswers = [{name2:'Ichigo Kurosaki', anime2: 'Bleach'}, {name2:'Hamtaro', anime2: 'Hamtaro'},{name2:'Saitama', anime2: 'One Punch man'},{name2:'Shinji Ikari', anime2: 'Neon Genesis Evangelion'}, {name2:'Edward Elric', anime2: 'Full Metal Alchemist'},]
 
 
 
@@ -102,6 +102,7 @@ function reset(){
   addOne = 0
   answer.innerText = addOne + " number of corrects"
   justice.innerText = "頑張る! Give it your best!"
+  
 }
 
 
@@ -127,29 +128,95 @@ function correct(tile){
 
 }
 }
+let fakeCharacterA = null
+let fakeCharacterB = null
+let fakeCharacterC = null
+let fakeCharacterD = null
+
 
 
 
 //This function populates right and wrong answer as well as includes lifetaker and addup. Reset is nested in for win condition or lose condition. Correct(tile) function is also nested in to shuffle around the answer tile and wrong anwer tile when a button is clicked. 
 
+
+
+
 function getAnswer(res){
 console.log(res)
-let character = null
 let animeTitle = placementSelector()
 animeTitle.innerText = res.anime
 let quoteQuestion = document.querySelector('#saidQuote')
 quoteQuestion.innerText = res.quote
 
-  fakeCharacterA = document.querySelector('#character1')
-  fakeCharacterB = document.querySelector('#character2')
- fakeCharacterC = document.querySelector('#character3')
-  fakeCharacterD = document.querySelector('#character4')
 
-// function finderMan(){
-//   while(fakeCharacterA=== fakeCharacterB || fakeCharacterB === fakeCharacterC || fakeCharacterC === fakeCharacterD || fakeCharacterD === res.character ||  fakeCharacterA === fakeCharacterC || fakeCharacterD===fakeCharacterC || fakeCharacterA === res.character || fakeCharacterB===res.character || fakeCharacterC=== res.character || fakeCharacterA === fakeCharacterD){
-//     return randomFakeAnswer()
-//   }
-// }
+function finderMan(){
+   
+    //  while(fakeCharacterA.innerText === fakeCharacterB.innerText || fakeCharacterB.innerText === fakeCharacterC.innerText || fakeCharacterC.innerText === fakeCharacterD.innerText || fakeCharacterD.innerText === res.character ||  fakeCharacterA.innerText === fakeCharacterC.innerText || fakeCharacterA.innerText === res.character|| fakeCharacterB.innerText===res.character || fakeCharacterC.innerText=== res.character || fakeCharacterA.innerText === fakeCharacterD.innerText || fakeCharacterB.innerText === fakeCharacterD.innerText || fakeCharacterB.innerText === fakeCharacterD.innerText){
+    //   console.log(fakeCharacterD.innerText + 'I am D')
+    //   console.log(fakeCharacterB.innerText + 'I am B')
+    //   console.log(fakeCharacterA.innerText + 'I am A')
+    //   console.log(fakeCharacterC + 'I am C')
+        return randomFakeAnswer()
+      //}
+  
+    
+  }
+// we tried splicing and finding the index
+// A != B C D res
+// B != A C D res
+// C != A B D res
+// D != A B C  res  
+
+function duplicateTrickA(){
+  if(fakeCharacterA.innerText === fakeCharacterB.innerText || fakeCharacterB.innerText === fakeCharacterC.innerText || fakeCharacterC.innerText === fakeCharacterD.innerText || fakeCharacterD.innerText === res.character ||  fakeCharacterA.innerText === fakeCharacterC.innerText || fakeCharacterA.innerText === res.character|| fakeCharacterB.innerText===res.character || fakeCharacterC.innerText=== res.character || fakeCharacterA.innerText === fakeCharacterD.innerText || fakeCharacterB.innerText === fakeCharacterD.innerText){
+   
+    fakeCharacterB.innerText = 'Suletta Mercury'
+    fakeTitleB.innerText = 'Gundam the Witch From Mercury'
+    fakeCharacterC.innerText = 'Angel'
+    fakeTitleC.innerText = 'Chainsaw Man'
+    fakeCharacterD.innerText = 'Anya Forger'
+    fakeTitleD = 'Spy x Family '
+    console.log('hamsters')
+  }
+}
+
+function duplicateTrickB(){
+if(fakeCharacterA.innerText === fakeCharacterB.innerText || fakeCharacterB.innerText === fakeCharacterC.innerText || fakeCharacterC.innerText === fakeCharacterD.innerText || fakeCharacterD.innerText === res.character ||  fakeCharacterA.innerText === fakeCharacterC.innerText || fakeCharacterA.innerText === res.character|| fakeCharacterB.innerText===res.character || fakeCharacterC.innerText=== res.character || fakeCharacterA.innerText === fakeCharacterD.innerText || fakeCharacterB.innerText === fakeCharacterD.innerText){
+fakeCharacterA.innerText = 'Edelgard'
+fakeTitleA.innerText = 'Fire Emblem Three Houses'
+fakeCharacterC.innerText = 'Angel'
+fakeTitleC.innerText = 'Chainsaw Man'
+fakeCharacterD.innerText = 'Anya Forger'
+fakeTitleD = 'Spy x Family '
+console.log('hamsters')
+} 
+}
+
+
+function duplicateTrickC(){
+if(fakeCharacterA.innerText === fakeCharacterB.innerText || fakeCharacterB.innerText === fakeCharacterC.innerText || fakeCharacterC.innerText === fakeCharacterD.innerText || fakeCharacterD.innerText === res.character ||  fakeCharacterA.innerText === fakeCharacterC.innerText || fakeCharacterA.innerText === res.character|| fakeCharacterB.innerText===res.character || fakeCharacterC.innerText=== res.character || fakeCharacterA.innerText === fakeCharacterD.innerText || fakeCharacterB.innerText === fakeCharacterD.innerText){
+fakeCharacterA.innerText = 'Edelgard'
+fakeTitleA.innerText = 'Fire Emblem Three Houses'
+fakeCharacterB.innerText = 'Suletta Mercury'
+fakeTitleB.innerText = 'Gundam the Witch From Mercury'
+fakeCharacterD.innerText = 'Anya Forger'
+fakeTitleD = 'Spy x Family '
+console.log('hamsters')
+}
+}
+
+function duplicateTrickD(){
+if(fakeCharacterA.innerText === fakeCharacterB.innerText || fakeCharacterB.innerText === fakeCharacterC.innerText || fakeCharacterC.innerText === fakeCharacterD.innerText || fakeCharacterD.innerText === res.character ||  fakeCharacterA.innerText === fakeCharacterC.innerText || fakeCharacterA.innerText === res.character|| fakeCharacterB.innerText===res.character || fakeCharacterC.innerText=== res.character || fakeCharacterA.innerText === fakeCharacterD.innerText || fakeCharacterB.innerText === fakeCharacterD.innerText){
+  fakeCharacterA.innerText = 'Edelgard'
+  fakeTitleA.innerText = 'Fire Emblem Three Houses'
+  fakeCharacterB.innerText = 'Suletta Mercury'
+  fakeTitleB.innerText = 'Gundam the Witch From Mercury'
+  fakeCharacterC.innerText = 'Angel'
+  fakeTitleC.innerText = 'Chainsaw Man'
+  console.log('hamsters')
+}
+}
+
 
  if(animeTitle=== placement1){
   character = placementA
@@ -174,98 +241,83 @@ quoteQuestion.innerText = res.quote
   tileD = true
  }
   if(character === placementA && animeTitle === placement1){
-    getFakeAnime2 = randomFakeAnswer()
-    //finderMan()
+    getFakeAnime2 =  finderMan()
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
     tileB = false
     
-    getFakeAnime3 = randomFakeAnswer()
-    //finderMan()
+    
+    getFakeAnime3 = finderMan()
     fakeCharacterC = document.querySelector('#character3')
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
     
-    getFakeAnime4 = randomFakeAnswer()
-    //finderMan()
+    
+    getFakeAnime4 = finderMan()
     fakeCharacterD = document.querySelector('#character4')
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
     tileD = false
-
+    duplicateTrickA()
     
   }else if(character === placementB && animeTitle === placement2){
     
-    getFakeAnime = randomFakeAnswer()
-    //finderMan()
-    fakeCharacterA = document.querySelector('#character1')
-    fakeCharacterA.innerText = getFakeAnime.name2
-    fakeTitleA = document.querySelector('#anime1')
-    fakeTitleA.innerText = getFakeAnime.anime2
-    tileA = false
-    
-
-
-
-    getFakeAnime3 = randomFakeAnswer()
-    //finderMan()
-    fakeCharacterC = document.querySelector('#character3')
-    fakeCharacterC.innerText = getFakeAnime3.name2
-    fakeTitleC = document.querySelector('#anime3')
-    fakeTitleC.innerText = getFakeAnime3.anime2
-    tileC = false
-    
-
-    getFakeAnime4 = randomFakeAnswer()
-    //finderMan()
-    fakeCharacterD = document.querySelector('#character4')
-    fakeCharacterD.innerText = getFakeAnime4.name2
-    fakeTitleD = document.querySelector('#anime4')
-    fakeTitleD.innerText = getFakeAnime4.anime2
-    tileD = false
-    
-
-
-    
-  }else if (character === placementC && animeTitle === placement3){
-    getFakeAnime = randomFakeAnswer()
-    //finderMan()
+    getFakeAnime = finderMan()
     fakeCharacterA = document.querySelector('#character1')
     fakeCharacterA.innerText = getFakeAnime.name2
     fakeTitleA = document.querySelector('#anime1')
     fakeTitleA.innerText = getFakeAnime.anime2
     tileA = false
    
+    getFakeAnime3 = finderMan()
+    fakeCharacterC = document.querySelector('#character3')
+    fakeCharacterC.innerText = getFakeAnime3.name2
+    fakeTitleC = document.querySelector('#anime3')
+    fakeTitleC.innerText = getFakeAnime3.anime2
+    tileC = false
+  
+    getFakeAnime4 = finderMan()
+    fakeCharacterD = document.querySelector('#character4')
+    fakeCharacterD.innerText = getFakeAnime4.name2
+    fakeTitleD = document.querySelector('#anime4')
+    fakeTitleD.innerText = getFakeAnime4.anime2
+    tileD = false
+    duplicateTrickB()
+    
 
-    getFakeAnime2 = randomFakeAnswer()
-    //finderMan()
+  }else if (character === placementC && animeTitle === placement3){
+    getFakeAnime = finderMan()
+    fakeCharacterA = document.querySelector('#character1')
+    fakeCharacterA.innerText = getFakeAnime.name2
+    fakeTitleA = document.querySelector('#anime1')
+    fakeTitleA.innerText = getFakeAnime.anime2
+    tileA = false
+    
+    getFakeAnime2 = finderMan()
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
     tileB= false
-    
+   
 
-    getFakeAnime4 = randomFakeAnswer()
-    //finderMan()
+    getFakeAnime4 = finderMan()
     fakeCharacterD = document.querySelector('#character4')
     fakeCharacterD.innerText = getFakeAnime4.name2
     fakeTitleD = document.querySelector('#anime4')
     fakeTitleD.innerText = getFakeAnime4.anime2
     tileD = false
-    
-
-
   
+    duplicateTrickC()
+
 
   }else if(character === placementD && animeTitle === placement4){
-    getFakeAnime = randomFakeAnswer()
-    //finderMan()
+    getFakeAnime = finderMan()
     fakeCharacterA = document.querySelector('#character1')
     fakeCharacterA.innerText = getFakeAnime.name2
     fakeTitleA = document.querySelector('#anime1')
@@ -273,25 +325,22 @@ quoteQuestion.innerText = res.quote
     tileA = false
     
 
-    getFakeAnime2 = randomFakeAnswer()
-    //finderMan()
+    getFakeAnime2 = finderMan()
     fakeCharacterB = document.querySelector('#character2')
     fakeCharacterB.innerText = getFakeAnime2.name2
     fakeTitleB = document.querySelector('#anime2')
     fakeTitleB.innerText = getFakeAnime2.anime2
     tileB = false
-  
+    
 
-    getFakeAnime3 = randomFakeAnswer()
-    //finderMan()
+    getFakeAnime3 =finderMan()
     fakeCharacterC = document.querySelector('#character3')
     fakeCharacterC.innerText = getFakeAnime3.name2
     fakeTitleC = document.querySelector('#anime3')
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
-   
+    duplicateTrickD()
   
-
 
   }
 }
@@ -351,6 +400,7 @@ let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
   })
   
  
+  //do another css trick by hiding the quotes also
 
 
  
