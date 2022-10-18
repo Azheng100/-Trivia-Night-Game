@@ -78,7 +78,7 @@ function placementSelector(){
 
 //used to generate a fake answer 
 function randomFakeAnswer(){
-  return randomFakeAnswer[Math.floor((Math.random()*randomFakeAnswer.length))]
+  return fakeAnswers[Math.floor((Math.random()*fakeAnswers.length))]
 }
 
 // check for hp
@@ -140,10 +140,10 @@ animeTitle.innerText = res.anime
 let quoteQuestion = document.querySelector('#saidQuote')
 quoteQuestion.innerText = res.quote
 
- // fakeCharacterA = document.querySelector('#character1')
-  //fakeCharacterB = document.querySelector('#character2')
- // fakeCharacterC = document.querySelector('#character3')
-  //fakeCharacterD = document.querySelector('#character4')
+  fakeCharacterA = document.querySelector('#character1')
+  fakeCharacterB = document.querySelector('#character2')
+ fakeCharacterC = document.querySelector('#character3')
+  fakeCharacterD = document.querySelector('#character4')
 
 // function finderMan(){
 //   while(fakeCharacterA=== fakeCharacterB || fakeCharacterB === fakeCharacterC || fakeCharacterC === fakeCharacterD || fakeCharacterD === res.character ||  fakeCharacterA === fakeCharacterC || fakeCharacterD===fakeCharacterC || fakeCharacterA === res.character || fakeCharacterB===res.character || fakeCharacterC=== res.character || fakeCharacterA === fakeCharacterD){
