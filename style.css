@@ -1,11 +1,22 @@
 
 body{
-    background-image: url(https://i.redd.it/oa3x8t30xos71.jpg);
-    background-position: center;
     font-family: 'Fuzzy Bubbles', cursive;
+    background: #fff;
+}
+  
+body.dark-theme {
+    background: #121212;
+  }
+  
+.btn-toggle{
+    color: beige;
+    float: right;
+    background-color: magenta;
+}
+
+
 
     
-}
 
 
 
@@ -94,6 +105,7 @@ button{
 
 
 
+
 #lifetotal{
     color: red
 }
@@ -103,4 +115,45 @@ button{
 }
 #truth{
     font-size: 30px;
+}
+
+.base-timer {
+    position: relative;
+    height: 300px;
+    width: 300px;
+  }
+  
+  /* Removes SVG styling that would hide the time label */
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+  
+  /* The SVG path that displays the timer's progress */
+  .base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+  }
+
+  .base-timer__label {
+    position: absolute;
+    
+    /* Size should match the parent container */
+    width: 300px;
+    height: 300px;
+    
+    /* Keep the label aligned to the top */
+    top: 0;
+    
+    /* Create a flexible box that centers content vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* Sort of an arbitrary number; adjust to your liking */
+    font-size: 48px;
+  }
+
+#app{
+    float: right
 }

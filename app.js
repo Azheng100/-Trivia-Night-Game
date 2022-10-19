@@ -1,6 +1,6 @@
 const url = "https://animechan.vercel.app/"
 
-//fake answers bank 
+//fake answers banks
 let fakeAnswers = [{name2:'Ichigo Kurosaki', anime2: 'Bleach'}, {name2:'Hamtaro', anime2: 'Hamtaro'},{name2:'Saitama', anime2: 'One Punch man'},{name2:'Shinji Ikari', anime2: 'Neon Genesis Evangelion'}, {name2:'Edward Elric', anime2: 'Full Metal Alchemist'}, {name2:'Mai valentine', anime2: 'Yugioh Duel Monsters'}, {name2:'Goku', anime2: 'Dragon Ball Z'}, {name2:'Yamcha', anime2: 'Dragonball'}, {name2:'Paradox Brothers', anime2: 'Yugioh GX'}, {name2:'Yu Narukami', anime2: 'Persona 4: The Animation'}, {name2:'Adachi', anime2: 'Persona 4: The Golden Animation'}, {name2:'Satsuki Kiryuin', anime2: 'Kill la Kill'}, {name2:'Ryuko Matoi', anime2: 'Kill la Kill'}, {name2:'Senketsu', anime2: 'Kill la Kill'}, {name2: 'Sasuke', anime2: 'Naruto'}, {name2: 'Denji', anime2: 'Chainsaw Man'}, {name2: 'Makima', anime2: 'Chainsaw Man'} , {name2: 'Power', anime2: 'Chainsaw Man'} , {name2: 'Setsuna F. Seiei', anime2: 'Mobile Suit Gundam 00'} ]
 
 let fakeAnswers2 = [{name2: 'Nico Yazawa', anime2: 'Love Live! School Idol Project'}, {name2: 'Ophelia', anime2: 'Claymore'}, {name2: 'Gintoki Sakata', anime2: 'Gintama'}, {name2: 'Sohma Rin', anime2: 'Fruits Basket'}, {name2: 'Iruka Umino', anime2: 'Naruto'}, {name2: 'Crona' , anime2: 'Soul Eater'}, {name2: 'Guts', anime2: 'Berserk'}, {name2: 'Senjougahara Hitagi', anime2: 'Koyomimonogatari'}, {name2: 'Kaname Chidori' , anime2: 'Full Metal Panic!' }, {name2: 'Shuuko Murao', anime2: 'Ao Haru Ride' }, {name2: 'Furude Rika', anime2: 'Higurashi No Naku Koro Ni' }, {name2: 'Tsunayoshi Sawada' , anime2: 'Katekyo Hitman Reborn!' }, {name2: 'Tetsuya Kuroko', anime2:'Kuroko No Basket'}, {name2: 'Detective Conan' ,  anime2: 'Detective Conan'}, {name2: 'Yuzu Hiiragi' ,  anime2: 'Yu-Gi-Oh! Arc-V'},{name2: 'Gen Takekura' ,  anime2: 'Eyeshield 21'},{name2: 'Kino' ,  anime2: 'Kino No Tabi'},{name2: 'Yuuji Kazami' ,  anime2: 'Grisaia no Kajitsu'},{name2: 'Nobuchika Ginoza' ,  anime2: 'Psycho-Pass'},{name2: 'Gaara' ,  anime2: 'Naruto'},{name2: 'Vegeta' ,  anime2: 'Dragon Ball z'},{name2: 'Biba Amatori' ,  anime2: 'Koutetsujou no Kabaneri'},{name2: 'Ai Haibara' ,  anime2: 'Detective Conan'},{name2: 'Nishi Joichiro' ,  anime2: 'Gantz'},{name2: 'Kizaru' ,  anime2: 'One Piece'},{name2: 'Hiei' ,  anime2: 'Yu Yu Hakusho'}, {name2: 'Gilgamesh' ,  anime2: 'Fate/zero'}, {name2: 'Zaraki Kenpachi' ,  anime2: 'Bleach'}, {name2: 'Kaori Miyazono' ,  anime2: 'Shigatsu Wa Kimi No Uso'}, {name2: 'Satoru Fujinuma' ,  anime2: 'Boku dake ga Inai Machi'}, {name2: 'Naru' ,  anime2: 'Girl Friends'}, {name2: 'Nona' ,  anime2: 'Death Parade'}, {name2: 'Soutarou Kanou' ,  anime2: 'Kaichou Wa Maid-Sama!'},{name2: 'Eren Jaeger' ,  anime2: 'Shingeki no Kyojin'},{name2: 'Takeo Gouda' ,  anime2: 'Ore Monogatari!!'},  {name2: 'Death Parade' ,  anime2: 'Death Parade'}, {name2: 'Ryuugamine Mikado' ,  anime2: 'Durarara!!'}, {name2: 'Nicholas D. Wolfwood' ,  anime2: 'Trigun'}, {name2: 'Yuuko Ichihara' ,  anime2: 'xxxHOLiC'}, {name2: 'Soichiro Arima' ,  anime2: 'His and Her Circumstances'}, {name2: 'Okita Sougo' ,  anime2: 'Gintama'}, {name2: 'Murasaki' ,  anime2: 'Hamatora: The Animation'}, {name2: 'Ogami Rei' ,  anime2: 'Code:Breaker'}, {name2: 'Ciel Phantomhive' ,  anime2: 'Kuroshitsuji'}, {name2: 'Maki Honoka' ,  anime2: 'Kiznaiver'}, {name2: 'Makishima Shougo' ,  anime2: 'Psycho-Pass'}, {name2: 'Sora' ,  anime2: 'No Game No Life'},]
@@ -172,31 +172,36 @@ animeTitle.innerText = res.anime
 let quoteQuestion = document.querySelector('#saidQuote')
 quoteQuestion.innerText = res.quote
 
-//this ended up replacing the answer
-function antiDuplicate(){
   shinyFinder =randomFakeAnswerZ()
   redherring = randomFakeAnswerZ()
   cow = randomFakeAnswerZ()
   pain = randomFakeAnswerZ()
-  while (res.character === fakeCharacterA.innerText){
-    fakeCharacterA.innerText = shinyFinder.name3
-    fakeTitleA.innerText =shinyFinder.anime3
-} console.log('duped')
-  while(res.character === fakeCharacterB.innerText){
-    fakeCharacterB.innerText = cow.name3
-    fakeTitleB.innerText =cow.anime3}
-    console.log('duped')
-  while (res.character === fakeCharacterC.innerText){
-    fakeCharacterC.innerText = redherring.name3
-    fakeTitleC.innerText =redherring.anime3}
-    console.log('duped')
 
-  while(res.character === fakeCharacterD.innerText){
-    fakeCharacterD.innerText = pain.name3
-    fakeTitleD.innerText =pain.anime3}
-    console.log('duped')
+
+// function antiDuplicate(){
+//   shinyFinder =randomFakeAnswerZ()
+//   redherring = randomFakeAnswerZ()
+//   cow = randomFakeAnswerZ()
+//   pain = randomFakeAnswerZ()
+//   while (res.character === fakeCharacterA.innerText){
+//     fakeCharacterA.innerText = shinyFinder.name3
+//     fakeTitleA.innerText =shinyFinder.anime3
+// } console.log('duped')
+//   while(res.character === fakeCharacterB.innerText){
+//     fakeCharacterB.innerText = cow.name3
+//     fakeTitleB.innerText =cow.anime3}
+//     console.log('duped')
+//   while (res.character === fakeCharacterC.innerText){
+//     fakeCharacterC.innerText = redherring.name3
+//     fakeTitleC.innerText =redherring.anime3}
+//     console.log('duped')
+
+//   while(res.character === fakeCharacterD.innerText){
+//     fakeCharacterD.innerText = pain.name3
+//     fakeTitleD.innerText =pain.anime3}
+//     console.log('duped')
   
-}
+//}
 
  if(animeTitle=== placement1){
   character = placementA
@@ -244,7 +249,7 @@ function antiDuplicate(){
     fakeTitleD.innerText = getFakeAnime4.anime2
     tileD = false
 
-    
+
   }else if(character === placementB && animeTitle === placement2){
     
     getFakeAnime = randomFakeAnswer()
@@ -318,7 +323,7 @@ function antiDuplicate(){
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
 
-    antiDuplicate()
+    //  antiDuplicate()
   }
 }
 
@@ -376,8 +381,45 @@ let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
       getQuestion()
   })
   
- 
+  const btn = document.querySelector('.btn-toggle')
+  btn.addEventListener('click', function() {
 
+    document.body.classList.toggle('dark-theme');  
+  })
+ 
+  document.getElementById("app").innerHTML = `
+  <div class="base-timer">
+    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g class="base-timer__circle">
+        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      </g>
+    </svg>
+    <span id="base-timer-label" class="base-timer__label">
+      ${formatTime(timeLeft)}
+    </span>
+  </div>
+  `
+
+
+  function formatTimeLeft(time) {
+    // The largest round integer less than or equal to the result of time divided being by 60.
+    const minutes = Math.floor(time / 60);
+    
+    // Seconds are the remainder of the time divided by 60 (modulus operator)
+    let seconds = time % 60;
+    
+    // If the value of seconds is less than 10, then display seconds with a leading zero
+    if (seconds < 10) {
+      seconds = `0${seconds}`;
+    }
+  
+    // The output in MM:SS format
+    return `${minutes}:${seconds}`;
+  }
+
+  const TIME_LIMIT = 20;
+  let timePassed = 0;
+  let timeLeft = TIME_LIMIT;
 
  
 
