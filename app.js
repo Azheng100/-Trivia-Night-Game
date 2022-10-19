@@ -22,6 +22,7 @@ fetch(url)
 //global variables 
 let button = document.querySelector('#nextQuestion')
 let displayGame = document.querySelector('.grid-container3')
+let quoteQuestion = document.querySelector('#saidQuote')
 let fakeCharacterA = null
 let fakeCharacterB = null
 let fakeCharacterC = null
@@ -120,7 +121,6 @@ function reset(){
   addOne = 0
   answer.innerText = addOne + " number of corrects"
   justice.innerText = "頑張る! Give it your best!"
-  
 }
 
 
@@ -153,7 +153,6 @@ function getAnswer(res){
 console.log(res)
 let animeTitle = placementSelector()
 animeTitle.innerText = res.anime
-let quoteQuestion = document.querySelector('#saidQuote')
 quoteQuestion.innerText = res.quote
 
  if(animeTitle=== placement1){
@@ -303,6 +302,7 @@ let go = button.addEventListener('click', ()=>{
   displayblock3()
   getQuestion()
   reset()
+  
 })
 
 
