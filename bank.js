@@ -31,3 +31,42 @@ fakeAnswers = [{name2:'Ichicgo Kurosaki', anime2: 'Bleach'}, {name2:'Hamtaro', a
 //     return randomFakeAnswer()
 //   }
 // }
+
+shinyFinder =randomFakeAnswerZ()
+  redherring = randomFakeAnswerZ()
+  cow = randomFakeAnswerZ()
+  pain = randomFakeAnswerZ()
+
+
+// function antiDuplicate(){
+//   shinyFinder =randomFakeAnswerZ()
+//   redherring = randomFakeAnswerZ()
+//   cow = randomFakeAnswerZ()
+//   pain = randomFakeAnswerZ()
+//   while (res.character === fakeCharacterA.innerText){
+//     fakeCharacterA.innerText = shinyFinder.name3
+//     fakeTitleA.innerText =shinyFinder.anime3
+// } console.log('duped')
+//   while(res.character === fakeCharacterB.innerText){
+//     fakeCharacterB.innerText = cow.name3
+//     fakeTitleB.innerText =cow.anime3}
+//     console.log('duped')
+//   while (res.character === fakeCharacterC.innerText){
+//     fakeCharacterC.innerText = redherring.name3
+//     fakeTitleC.innerText =redherring.anime3}
+//     console.log('duped')
+
+//   while(res.character === fakeCharacterD.innerText){
+//     fakeCharacterD.innerText = pain.name3
+//     fakeTitleD.innerText =pain.anime3}
+//     console.log('duped')
+  
+//}
+// failsafe bank generator
+function randomFakeAnswerZ(){
+  return reallyFakeAnswer[Math.floor((Math.random()*reallyFakeAnswer.length))]
+}
+
+
+
+{name2:'Claude Von Reigan', anime2: 'Fire Emblem Three Hope'}, {name2:'Dimitri Alexandre Blaiddyd', anime2: 'Fire Emblem Three Hope'}, {name2:'Marth', anime2: 'Fire Emblem Shadow Dragons'}, {name2:'Miorine Rembran', anime2: 'Mobile Suit Gundam the Witch from Mercury'}, {name2:'Shaddiq Zenelli', anime2: 'Mobile Suit Gundmm the Witch from Mercury'}, {name2:'Delling Rembran', anime2: 'Mobile Suit Gundmm the Witch from Mercury - Prologue'},

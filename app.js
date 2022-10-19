@@ -7,10 +7,7 @@ let fakeAnswers2 = [{name2: 'Nico Yazawa', anime2: 'Love Live! School Idol Proje
 
 let fakeAnswers3 =[{name2: 'Atsuko Chiba' ,  anime2: 'Paprika'}, {name2: 'Tenma Tsukamoto' ,  anime2: 'School Rumble'}, {name2: 'Gokou Ruri' , anime2: 'Ore No Imouto Ga Konna Ni Kawaii Wake Ga Nai'}, {name2: 'Porco Rosso' , anime2: 'Porco Rosso'}, {name2: 'Kurotsuchi Mayuri' ,  anime2: 'Bleach'}, {name2: 'Okabe Rintarou' ,  anime2: 'Steins;Gate'}, {name2: 'Kurama' ,  anime2: 'Yu Yu Hakusho'}, {name2: 'Dongtae' ,  anime2: 'Dice: The Cube That Changes Everything'}, {name2: 'Light Yagami' ,  anime2: 'Death Note'},{name2: 'Kabuto Yakushi' ,  anime2: 'Naruto'},{name2: 'Donquixote Doflamingo' ,  anime2: 'One Piece'},{name2: 'Toph Bei Fong' ,  anime2: 'Avatar: The Last Airbender'},{name2: 'Sokka' ,  anime2: 'Avatar: The Last Airbender'},{name2: 'Erza Scarlet' ,  anime2: 'Fairy Tail'},{name2: 'Mikage' ,  anime2: '07 Ghost'},{name2: 'Van Hohenheim' ,  anime2: 'Fullmetal Alchemist'},{name2: 'Kamina' ,  anime2: 'Tengen Toppa Gurren Lagann'},{name2: 'Kaneki Ken' ,  anime2: 'Tokyo Ghoul'},{name2: 'Aang' ,  anime2: 'Avatar: The Last Airbender'},{name2: 'Rin Okumura' ,  anime2: 'Ao no Exorcist'},{name2: 'Outlaw Star' ,  anime2: 'Outlaw Star'},{name2: 'Tsugumi' ,  anime2: 'Guilty Crown'},{name2: 'Nisekoi' ,  anime2: 'Tachibana Marika'},{name2: 'Yoshii Akihisa' ,  anime2: 'Baka to Test to Shoukanjuu'},{name2: 'Nara Shikamaru',anime2: 'Naruto'}]
 
-let fakeAnswers4 = [{name2: 'Lucy' ,  anime2: 'Elfen Lied'},{name2: 'Uryuu Ishida' ,  anime2: 'Bleach'},{name2: 'Shizuku Mizutani' ,  anime2: 'Tonari No Kaibutsu-kun'},{name2: 'Ayumi Yamada' , anime2: 'Honey and Clover'},{name2: 'Kagura Mikazuchi' ,  anime2: ' Fairy Tail'},{name2: 'Nejima Yukari' ,  anime2: 'Koi to Uso'},{name2: 'Kazuma Kuwabara' ,  anime2: 'Yu Yu Hakusho'}, {name2: 'Roy Mustang' ,  anime2: 'Fullmetal Alchemist'},{name2: 'Koko Hekmatyar' ,  anime2: 'Jormungand'} ]
-
-let reallyFakeAnswer = [{name3:'Claude Von Reigan', anime3: 'Fire Emblem Three Hope'}, {name3:'Dimitri Alexandre Blaiddyd', anime3: 'Fire Emblem Three Hope'}, {name3:'Marth', anime3: 'Fire Emblem Shadow Dragons'}, {name3:'Miorine Rembran', anime3: 'Mobile Suit Gundam the Witch from Mercury'}, {name3:'Shaddiq Zenelli', anime3: 'Mobile Suit Gundmm the Witch from Mercury'}, {name3:'Delling Rembran', anime3: 'Mobile Suit Gundmm the Witch from Mercury - Prologue'},]
-
+let fakeAnswers4 = [{name2: 'Lucy' ,  anime2: 'Elfen Lied'},{name2: 'Uryuu Ishida' ,  anime2: 'Bleach'},{name2: 'Shizuku Mizutani' ,  anime2: 'Tonari No Kaibutsu-kun'},{name2: 'Ayumi Yamada' , anime2: 'Honey and Clover'},{name2: 'Kagura Mikazuchi' ,  anime2: ' Fairy Tail'},{name2: 'Nejima Yukari' ,  anime2: 'Koi to Uso'},{name2: 'Kazuma Kuwabara' ,  anime2: 'Yu Yu Hakusho'}, {name2: 'Roy Mustang' ,  anime2: 'Fullmetal Alchemist'},{name2: 'Koko Hekmatyar' ,  anime2: 'Jormungand'}, {name2:'Claude Von Reigan', anime2: 'Fire Emblem Three Hope'}, {name2:'Dimitri Alexandre Blaiddyd', anime2: 'Fire Emblem Three Hope'}, {name2:'Marth', anime2: 'Fire Emblem Shadow Dragons'}, {name2:'Miorine Rembran', anime2: 'Mobile Suit Gundam the Witch from Mercury'}, {name2:'Shaddiq Zenelli', anime2: 'Mobile Suit Gundmm the Witch from Mercury'}, {name2:'Delling Rembran', anime2: 'Mobile Suit Gundmm the Witch from Mercury - Prologue'}, ]
 
 
 //checks to see if connection works
@@ -102,11 +99,6 @@ function randomFakeAnswer4(){
   return fakeAnswers4[Math.floor((Math.random()*fakeAnswers4.length))]
 }
 
-// failsafe bank generator
-function randomFakeAnswerZ(){
-  return reallyFakeAnswer[Math.floor((Math.random()*reallyFakeAnswer.length))]
-}
-
 
 // check for hp
 function lifeTaker(){
@@ -155,14 +147,6 @@ function correct(tile){
 }
 }
 
-
-
-
-
-
-
-
-
 //This function populates right and wrong answer as well as includes lifetaker and addup. Reset is nested in for win condition or lose condition. Correct(tile) function is also nested in to shuffle around the answer tile and wrong anwer tile when a button is clicked. 
 
 function getAnswer(res){
@@ -171,37 +155,6 @@ let animeTitle = placementSelector()
 animeTitle.innerText = res.anime
 let quoteQuestion = document.querySelector('#saidQuote')
 quoteQuestion.innerText = res.quote
-
-  shinyFinder =randomFakeAnswerZ()
-  redherring = randomFakeAnswerZ()
-  cow = randomFakeAnswerZ()
-  pain = randomFakeAnswerZ()
-
-
-// function antiDuplicate(){
-//   shinyFinder =randomFakeAnswerZ()
-//   redherring = randomFakeAnswerZ()
-//   cow = randomFakeAnswerZ()
-//   pain = randomFakeAnswerZ()
-//   while (res.character === fakeCharacterA.innerText){
-//     fakeCharacterA.innerText = shinyFinder.name3
-//     fakeTitleA.innerText =shinyFinder.anime3
-// } console.log('duped')
-//   while(res.character === fakeCharacterB.innerText){
-//     fakeCharacterB.innerText = cow.name3
-//     fakeTitleB.innerText =cow.anime3}
-//     console.log('duped')
-//   while (res.character === fakeCharacterC.innerText){
-//     fakeCharacterC.innerText = redherring.name3
-//     fakeTitleC.innerText =redherring.anime3}
-//     console.log('duped')
-
-//   while(res.character === fakeCharacterD.innerText){
-//     fakeCharacterD.innerText = pain.name3
-//     fakeTitleD.innerText =pain.anime3}
-//     console.log('duped')
-  
-//}
 
  if(animeTitle=== placement1){
   character = placementA
@@ -323,7 +276,7 @@ quoteQuestion.innerText = res.quote
     fakeTitleC.innerText = getFakeAnime3.anime2
     tileC = false
 
-    //  antiDuplicate()
+    
   }
 }
 
@@ -381,45 +334,14 @@ let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
       getQuestion()
   })
   
+  //csstrick website gave me this idea: toggles background image
   const btn = document.querySelector('.btn-toggle')
   btn.addEventListener('click', function() {
 
     document.body.classList.toggle('dark-theme');  
   })
  
-  document.getElementById("app").innerHTML = `
-  <div class="base-timer">
-    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <g class="base-timer__circle">
-        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-      </g>
-    </svg>
-    <span id="base-timer-label" class="base-timer__label">
-      ${formatTime(timeLeft)}
-    </span>
-  </div>
-  `
-
-
-  function formatTimeLeft(time) {
-    // The largest round integer less than or equal to the result of time divided being by 60.
-    const minutes = Math.floor(time / 60);
-    
-    // Seconds are the remainder of the time divided by 60 (modulus operator)
-    let seconds = time % 60;
-    
-    // If the value of seconds is less than 10, then display seconds with a leading zero
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
   
-    // The output in MM:SS format
-    return `${minutes}:${seconds}`;
-  }
-
-  const TIME_LIMIT = 20;
-  let timePassed = 0;
-  let timeLeft = TIME_LIMIT;
 
  
 
