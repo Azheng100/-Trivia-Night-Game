@@ -5,7 +5,8 @@ body{
     background-image: url(https://i.redd.it/oa3x8t30xos71.jpg);
     background-position: center;
 }
-  
+
+/*this dark theme and button toggle was from csstricks website*/ 
 body.dark-theme {
     background: #121212;
   }
@@ -81,7 +82,7 @@ h2{
 }
 
 h3{
-    font-size: 3vw;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
 }
