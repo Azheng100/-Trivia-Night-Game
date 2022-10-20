@@ -12,6 +12,8 @@ The anime genre for television shows and movies has become a hot commodity in we
 
 ### *How to get started*: 
 First I set up a trello board to plan out the week. I took the api from github directory and imported it into my javascript file. Next was to create the boilerplates for a simple template. I created a wireframe before generating the grid in html. Once the grid is complete, I will have to work on populating the grid with answer choices, generating an api call, and writing out 100 dummy answers. The javascript functions would require a way to shuffle the answer choices, a health bar counter, a display showing right or wrong answer on the previous choices, a reset function, and a number of correct answer counter. The additional feature I want would be a toggle to display a different background. A timer that prevents stalling would be a very ideal stretch goal. 
+
+To play the game, you would simply press the start/reset button. Once the game starts, a quote and four answer choices will populate the gameboard. If a player selects a correct answer, the number of questions correct counter will go up by one. If a player answers it wrong, then the lifetotal count, which starts off as three, will decrease by one. The win condition will be getting ten correct answers and the lose condition is losing all three lifetotals. To reset, simply press the start/reset button twice. You will notice a nice random quote will populate the board before the actual game starts. You are also able to toggle the background from dark theme to Evangelion theme. Test your anime knowledge now by playing my fan game. 
  
 
 Wire Frame

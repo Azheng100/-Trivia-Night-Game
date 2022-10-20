@@ -23,6 +23,7 @@ fetch(url)
 let button = document.querySelector('#nextQuestion')
 let displayGame = document.querySelector('.grid-container3')
 let quoteQuestion = document.querySelector('#saidQuote')
+const btn = document.querySelector('.btn-toggle')
 let fakeCharacterA = null
 let fakeCharacterB = null
 let fakeCharacterC = null
@@ -335,7 +336,6 @@ let buttonA = document.querySelector('#buttonA').addEventListener('click', ()=>{
   })
   
   //csstrick website gave me this idea: toggles background image
-  const btn = document.querySelector('.btn-toggle')
   btn.addEventListener('click', function() {
 
     document.body.classList.toggle('dark-theme');  
